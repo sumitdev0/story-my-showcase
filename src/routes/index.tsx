@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import portrait from "@/assets/portrait.jpg";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -39,9 +40,12 @@ function Nav() {
           <a href="#work" className="transition hover:text-foreground">Work</a>
           <a href="#contact" className="transition hover:text-foreground">Contact</a>
         </nav>
-        <a href="#contact" className="rounded-full border border-foreground px-4 py-1.5 text-xs uppercase tracking-[0.18em] transition hover:bg-foreground hover:text-background">
-          Say hi
-        </a>
+        <div className="flex items-center gap-4">
+          <ThemeToggle />
+          <a href="#contact" className="hidden rounded-full border border-foreground px-4 py-1.5 text-xs uppercase tracking-[0.18em] transition hover:bg-foreground hover:text-background sm:inline-block">
+            Say hi
+          </a>
+        </div>
       </div>
     </header>
   );
