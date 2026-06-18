@@ -124,7 +124,7 @@ function Hero() {
 function Marquee() {
   const items = ["Python", "C++", "PyTorch", "TensorFlow", "NumPy", "Codeforces", "LeetCode", "Graphs", "DP", "Transformers", "React", "TypeScript"];
   return (
-    <div className="overflow-hidden border-t border-border bg-card">
+    <div className="overflow-hidden border-y border-border">
       <div className="flex gap-12 whitespace-nowrap py-4 font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground [animation:marquee_40s_linear_infinite]">
         {[...items, ...items, ...items].map((t, i) => (
           <span key={i} className="flex items-center gap-12">
