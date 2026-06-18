@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import portrait from "@/assets/portrait.jpg";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { GlassDock, GlassFilter } from "@/components/ui/liquid-glass";
+import { Github, Linkedin, Code2, Trophy, Mail, Brain } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -23,6 +25,26 @@ function Index() {
       <Projects />
       <Contact />
       <Footer />
+      <SocialDock />
+      <GlassFilter />
+    </div>
+  );
+}
+
+function SocialDock() {
+  const icons = [
+    { icon: <Github size={20} strokeWidth={1.5} />, label: "GitHub", href: "https://github.com" },
+    { icon: <Linkedin size={20} strokeWidth={1.5} />, label: "LinkedIn", href: "https://linkedin.com" },
+    { icon: <Code2 size={20} strokeWidth={1.5} />, label: "Codeforces", href: "https://codeforces.com" },
+    { icon: <Trophy size={20} strokeWidth={1.5} />, label: "LeetCode", href: "https://leetcode.com" },
+    { icon: <Brain size={20} strokeWidth={1.5} />, label: "Kaggle", href: "https://kaggle.com" },
+    { icon: <Mail size={20} strokeWidth={1.5} />, label: "Email", href: "mailto:hello@example.com" },
+  ];
+  return (
+    <div className="pointer-events-none fixed inset-x-0 bottom-6 z-40 flex justify-center px-4">
+      <div className="pointer-events-auto">
+        <GlassDock icons={icons} />
+      </div>
     </div>
   );
 }
